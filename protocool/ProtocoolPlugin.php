@@ -10,6 +10,14 @@ class ProtocoolPlugin extends BasePlugin {
     return '0.1';
   }
 
+  public function getSchemaVersion() {
+    return '0.1';
+  }
+
+  public function getDescription() {
+    return 'A small collection of filters and functions that can query and modify a url.';
+  }
+
   public function getDeveloper() {
     return 'Yello Studio';
   }
