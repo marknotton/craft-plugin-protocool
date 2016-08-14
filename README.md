@@ -1,6 +1,6 @@
 # Youarel *for Craft CMS*
 
-Pronounced *"URL"* this plugin adds a small collection of filters and functions that can query and modify a url string.
+Pronounced *"URL"*, this plugin adds a small collection of filters and functions that can query and modify a url string.
 
 ## Segment
 Grab a certain segment of a given URL string. You can query a url with a filter or function.
@@ -71,7 +71,7 @@ http://www.website.com?foo=bar&test
 
 URL and an array will ignore any other strings passed. Any variables that already exist in the url will be overwritten. Everything else will be added to the end.
 ```
-{{ params('http://www.website.com?foo=bar', ['foo'=>'jazz', 'ping'=>'pong', 'test'] }}
+{{ params('http://www.website.com?foo=bar', {'foo':'bar', 'ping':'pong'}) }}
 ```
 ```
 http://www.website.com?foo=jazz&ping=pong&test
@@ -90,7 +90,7 @@ Just two strings variables will be added as a variable and value respectively. O
 {{ params('foo', 'bar') }}
 ```
 ```
-http://www.[what-ever-url-you-are-on].com?foo=bar
+http://www.[current-url].com?foo=bar
 ```
 
 Just one string will be added as a value. Ommitting a url will fallback to the current to the current page url
@@ -98,7 +98,21 @@ Just one string will be added as a value. Ommitting a url will fallback to the c
 {{ params('test') }}
 ```
 ```
-http://www.[what-ever-url-you-are-on].com?test
+http://www.[current-url].com?test
+```
+
+#### Advance Usage
+Using Craft ```#{...}``` syntax, you can use this to product some interesting results
+```
+<a href="{{
+	params('mailto:mark@marknotton.uk', {
+		'subject':"I love your website #{siteName}",
+		'body':"I was on '#{ entry.title|default('your website')}' and had to get in touch"
+	})
+}}">Email Link</a>
+```
+```
+<a href="&#10;mailto:mark@marknotton.uk?subject=I love your website Craft Master&amp;body=I was on 'Welcome to Craft Master' and had to get in touch&#10;">Email Link</a>
 ```
 
 ## Local

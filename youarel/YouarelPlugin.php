@@ -1,9 +1,9 @@
 <?php
 namespace Craft;
 
-class ProtocoolPlugin extends BasePlugin {
+class YouarelPlugin extends BasePlugin {
   public function getName() {
-    return Craft::t('Protocool');
+    return Craft::t('Youarel');
   }
 
   public function getVersion() {
@@ -15,7 +15,7 @@ class ProtocoolPlugin extends BasePlugin {
   }
 
   public function getDescription() {
-    return 'A small collection of filters and functions that can query and modify a url string.';
+    return 'Adds a small collection of filters and functions that can query and modify a url string.';
   }
 
   public function getDeveloper() {
@@ -27,21 +27,20 @@ class ProtocoolPlugin extends BasePlugin {
   }
 
   public function getDocumentationUrl() {
-    return 'https://github.com/marknotton/craft-plugin-protocool';
+    return 'https://github.com/marknotton/craft-plugin-youarel';
   }
 
   public function getReleaseFeedUrl() {
-    return 'https://raw.githubusercontent.com/marknotton/craft-plugin-protocool/master/protocool/releases.json';
+    return 'https://raw.githubusercontent.com/marknotton/craft-plugin-youarel/master/youarel/releases.json';
   }
 
   public function addTwigExtension() {
-    Craft::import('plugins.protocool.twigextensions.segment');
-    Craft::import('plugins.protocool.twigextensions.params');
+    Craft::import('plugins.youarel.twigextensions.segment');
+    Craft::import('plugins.youarel.twigextensions.params');
     return array(
       new segment(),
       new params()
     );
-
   }
 
 }
