@@ -114,9 +114,3 @@ Using Craft ```#{...}``` syntax, you can use this to produce some interesting re
 ```
 <a href="&#10;mailto:mark@marknotton.uk?subject=I love your website Craft Master&amp;body=I was on 'Welcome to Craft Master' and had to get in touch&#10;">Email Link</a>
 ```
-
-## Local
-A very quick check to see if you are on a local or live server. Returns ```Boolean```
-```
-{{ local }}
-```
