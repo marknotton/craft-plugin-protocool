@@ -14,7 +14,7 @@ Grab a certain segment of a given URL string. You can query a url with a filter 
 | 'first'         | Alias of ```1```
 | 'last'          | Return the last segment
 
-
+#### Usage
 Returns 2nd segment of current page url
 ```
 {{ segment(2) }}
@@ -60,7 +60,7 @@ Add or update parameters within a string that is a url.
 | String | Add a single string to add the given string to the url without a value. Or add two string parameters, the first will be added as a variable, the second as the value.
 | Array  | Add an associative array to add multiple values to the url.
 
-
+#### Usage
 URL and just one string, results in adding the value to the end of the url without editing any existing parameters
 ```
 {{ params('http://www.website.com?foo=bar', 'test') }}
@@ -102,5 +102,7 @@ http://www.[what-ever-url-you-are-on].com?test
 ```
 
 ## Local
-A very quick check to see if you are on a local or live server. Returns Boolean
+A very quick check to see if you are on a local or live server. Returns ```Boolean```
+```
 {{ local }}
+```
