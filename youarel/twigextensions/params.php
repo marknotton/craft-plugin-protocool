@@ -1,29 +1,25 @@
 <?php
 namespace Craft;
 
-class QuickService extends BaseApplicationComponent {
+class params extends \Twig_Extension {
 
-  // Add or update parameters within a [url] string.
+  public function getName() {
+    return Craft::t('Params');
+  }
 
-  // URL and just one string, results in adding the value to the end of the url and not editing any existing parameters
-  // params('http://www.website.com?foo=bar', 'test');
-  // http://www.website.com?foo=bar&test
 
-  // URL and an array will ignore any other strings passed. Any variables that already exist in the url will be overwritten. Everything else will be added to the end.
-  // params('http://www.website.com?foo=bar', ['foo'=>'jazz', 'ping'=>'pong', 'test']);
-  // http://www.website.com?foo=jazz&ping=pong&test
+  public function getFilters() {
+		return array(
+      'params' => new \Twig_Filter_Method($this, 'params')
+		);
+	}
 
-  // URL and two additional string variables will be added as a variable and value respectively.
-  // params('http://www.website.com', 'foo', 'bar')
-  // http://www.website.com?foo=bar
+  public function getFunctions() {
+    return array(
+      'params' => new \Twig_Function_Method($this, 'params')
+    );
+  }
 
-  // Just two strings variables will be added as a variable and value respectively. Ommitting a url will fallback to the current to the current page url
-  // params('foo', 'bar')
-  // http://www.[what-ever-url-you-are-on].com?foo=bar
-
-  // Just one string will be added as a value. Ommitting a url will fallback to the current to the current page url
-  // params('test')
-  // http://www.[what-ever-url-you-are-on].com?test
   function params(){
 
     // Fail if not parameters are passed
@@ -115,5 +111,4 @@ class QuickService extends BaseApplicationComponent {
 
     return $url;
   }
-
 }

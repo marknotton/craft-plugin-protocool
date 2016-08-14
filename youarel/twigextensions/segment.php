@@ -1,15 +1,26 @@
 <?php
 namespace Craft;
 
-class Protocool_SegmentsService extends BaseApplicationComponent {
+class segment extends \Twig_Extension {
 
-  // Grab a certain segment of a given URL string
-  // quick.urlSegment(2)                                               - Returns 2nd segment of current page url
-  // quick.urlSegment("http://www.website.com/segment/seg/s", 2)       - Returns 2nd url segment : 'seg'
-  // quick.urlSegment("http://www.website.com/segment/seg/s", 0)       - Returns the website url without any segments : 'http://www.website.com'
-  // quick.urlSegment("http://www.website.com/segment/seg/s", 'last')  - Returns the last segment : 's'
-  // quick.urlSegment("http://www.website.com/segment/seg/s", 'first') - Returns the first segment : 'segment'
-  // quick.urlSegment("http://www.website.com/segment/seg/s", -3)      - Returns the third segment from the end : 'segment'
+  public function getName() {
+    return Craft::t('Segment');
+  }
+
+
+  public function getFilters() {
+		return array(
+      'segment' => new \Twig_Filter_Method($this, 'segment')
+		);
+	}
+
+  public function getFunctions() {
+    return array(
+      'segment' => new \Twig_Function_Method($this, 'segment')
+    );
+  }
+
+
   public function segments() {
 
     // Fail if not parameters are passed

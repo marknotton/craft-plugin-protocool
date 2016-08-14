@@ -15,7 +15,7 @@ class ProtocoolPlugin extends BasePlugin {
   }
 
   public function getDescription() {
-    return 'A small collection of filters and functions that can query and modify a url.';
+    return 'A small collection of filters and functions that can query and modify a url string.';
   }
 
   public function getDeveloper() {
@@ -35,28 +35,13 @@ class ProtocoolPlugin extends BasePlugin {
   }
 
   public function addTwigExtension() {
-    Craft::import('plugins.quick.twigextensions.link');
-    Craft::import('plugins.quick.twigextensions.checkfields');
-    Craft::import('plugins.quick.twigextensions.fileexists');
-    Craft::import('plugins.quick.twigextensions.version');
-    Craft::import('plugins.quick.twigextensions.slugify');
-
+    Craft::import('plugins.protocool.twigextensions.segment');
+    Craft::import('plugins.protocool.twigextensions.params');
     return array(
-      new link(),
-      new checkfields(),
-      new fileexists(),
-      new version(),
-      new slugify()
+      new segment(),
+      new params()
     );
+
   }
 
-  public function init() {
-    if (!craft()->isConsole() && !craft()->request->isCpRequest())  {
-      craft()->urlManager->setRouteVariables(
-        array(
-          'segments' => craft()->protocool,
-        )
-      );
-    }
-  }
 }
