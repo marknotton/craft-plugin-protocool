@@ -74,7 +74,7 @@ URL and an array will ignore any other strings passed. Any variables that alread
 {{ params('http://www.website.com?foo=bar', {'foo':'bar', 'ping':'pong'}) }}
 ```
 ```
-http://www.website.com?foo=jazz&ping=pong&test
+http://www.website.com?foo=bar&ping=pong
 ```
 
 URL and two additional string variables will be added as a variable and value respectively.
@@ -102,7 +102,7 @@ http://www.[current-url].com?test
 ```
 
 #### Advance Usage
-Using Craft ```#{...}``` syntax, you can use this to product some interesting results
+Using Craft ```#{...}``` syntax, you can use this to produce some interesting results
 ```
 <a href="{{
 	params('mailto:mark@marknotton.uk', {
