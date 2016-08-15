@@ -71,10 +71,10 @@ http://www.website.com?foo=bar&test
 
 URL and an array will ignore any other strings passed. Any variables that already exist in the url will be overwritten. Everything else will be added to the end.
 ```
-{{ params('http://www.website.com?foo=bar', {'foo':'bar', 'ping':'pong'}) }}
+{{ params('http://www.website.com?foo=bar', {'foo':'new', 'ping':'pong'}) }}
 ```
 ```
-http://www.website.com?foo=bar&ping=pong
+http://www.website.com?foo=new&ping=pong
 ```
 
 URL and two additional string variables will be added as a variable and value respectively.
