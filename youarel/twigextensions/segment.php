@@ -10,13 +10,13 @@ class segment extends \Twig_Extension {
 
   public function getFilters() {
 		return array(
-      'segment' => new \Twig_Filter_Method($this, 'segment')
+      'segment' => new \Twig_Filter_Method($this, 'segments')
 		);
 	}
 
   public function getFunctions() {
     return array(
-      'segment' => new \Twig_Function_Method($this, 'segment')
+      'segment' => new \Twig_Function_Method($this, 'segments')
     );
   }
 
