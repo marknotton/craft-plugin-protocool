@@ -82,7 +82,7 @@ class segment extends \Twig_Extension {
     if ($segment == 'last') {
       return end($segments);
     } else if ($segment == 'first') {
-      return $segments[1];
+      return $segments[0];
     }
 
     return false;
