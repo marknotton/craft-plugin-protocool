@@ -1,6 +1,13 @@
+<img src="http://i.imgur.com/M4ikDkt.png" alt="Youarel" align="left" height="60" />
+
 # Youarel *for Craft CMS*
 
 Pronounced *"URL"*, this plugin adds a small collection of filters and functions that can query and modify a url string.
+
+##Table of Contents
+
+- [Segment](#segment)
+- [Params](#params)
 
 ## Segment
 Grab a certain segment of a given URL string. You can query a url with a filter or function.
