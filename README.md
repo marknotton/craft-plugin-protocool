@@ -56,7 +56,7 @@ Returns the third segment from the end : ```segment```
 {{ segment("http://www.website.com/segment/seg/s", -3) }}
 {{ "http://www.website.com/segment/seg/s"|segment(-3) }}
 ```
-
+----
 
 ## Params
 Add or update parameters within a string that is a url.
@@ -120,4 +120,16 @@ Using Craft ```#{...}``` syntax, you can use this to produce some interesting re
 ```
 ```
 <a href="&#10;mailto:mark@marknotton.uk?subject=I love your website Craft Master&amp;body=I was on 'Welcome to Craft Master' and had to get in touch&#10;">Email Link</a>
+```
+----
+
+## Remove Port
+Removes the port number from a URL string
+
+```
+{{ removeport('http://www.website.com:3000/segment/seg?foo=bar') }}
+{{ 'http://www.website.com:3000/segment/seg?foo=bar'|removeport }}
+```
+```
+http://www.website.com/segment/seg?foo=bar
 ```

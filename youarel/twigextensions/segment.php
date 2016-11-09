@@ -23,7 +23,7 @@ class segment extends \Twig_Extension {
 
   public function segments() {
 
-    // Fail if not parameters are passed
+    // Fail if no parameters are passed
     if ( func_num_args() < 1 ){
       return false;
     }
