@@ -8,6 +8,7 @@ Pronounced *"URL"*, this plugin adds a small collection of filters and functions
 
 - [Segment](#segment)
 - [Params](#params)
+- [Remove Port](#remove-port)
 
 ## Segment
 Grab a certain segment of a given URL string. You can query a url with a filter or function.
