@@ -23,23 +23,11 @@ class removeport extends \Twig_Extension {
 
   public function removePort($url) {
 
-    // $urlParts = parse_url($url);
-    //
-    // echo $urlParts['scheme'].'://'.$urlParts['host'].$urlParts['path'].'<br /><br />';
-    //
-    // echo $urlParts['scheme'].$urlParts['host'].$urlParts['path'].'<br /><br />';
-    //
-    // echo $urlParts['scheme'].'<br />';
-    // echo $urlParts['host'].'<br />';
-    // echo $urlParts['path'].'<br /><br />';
-    //
-    // echo "<pre>";
-    //   var_dump($urlParts);
-    // echo "</pre><br /><br />";
-    //
-    // echo str_replace(":3000", '', $url).'<br /><br />';
+    $urlParts = parse_url($url);
 
-    return $url;
+    unset($urlParts['port']);
+
+    return implode($urlParts);
 
   }
 }
