@@ -37,11 +37,15 @@ class YouarelPlugin extends BasePlugin {
   public function addTwigExtension() {
     Craft::import('plugins.youarel.twigextensions.segment');
     Craft::import('plugins.youarel.twigextensions.params');
+    Craft::import('plugins.youarel.twigextensions.slugify');
     Craft::import('plugins.youarel.twigextensions.removeport');
+    Craft::import('plugins.youarel.twigextensions.baseurl');
     return array(
       new segment(),
       new params(),
-      new removeport()
+      new slugify(),
+      new removeport(),
+      new baseurl()
     );
   }
 
