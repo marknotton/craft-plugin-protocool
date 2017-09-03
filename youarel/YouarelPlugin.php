@@ -40,12 +40,14 @@ class YouarelPlugin extends BasePlugin {
     Craft::import('plugins.youarel.twigextensions.slugify');
     Craft::import('plugins.youarel.twigextensions.removeport');
     Craft::import('plugins.youarel.twigextensions.baseurl');
+    Craft::import('plugins.youarel.twigextensions.responsecode');
     return array(
       new segment(),
       new params(),
       new slugify(),
       new removeport(),
-      new baseurl()
+      new baseurl(),
+      new responsecode()
     );
   }
 
